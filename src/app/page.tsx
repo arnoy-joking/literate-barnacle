@@ -71,19 +71,23 @@ export default function Home() {
     >
       <div className="absolute inset-0 bg-background/50 backdrop-blur-sm" />
       
-      <div className="relative z-10 flex min-h-screen flex-col items-center justify-between p-4 sm:p-8 md:p-12">
-        <header className="flex w-full max-w-7xl items-start justify-between">
-          <Weather />
-          <Settings onWallpaperUpload={handleWallpaperUpload} onClearWallpaper={clearWallpaper} />
-        </header>
+      <div className="relative z-10 flex min-h-screen flex-col justify-between p-4 sm:p-8 md:p-12">
+        <div className="w-full flex flex-col items-center">
+          <header className="flex w-full max-w-7xl items-start justify-end">
+            <Settings onWallpaperUpload={handleWallpaperUpload} onClearWallpaper={clearWallpaper} />
+          </header>
 
-        <main className="flex flex-col items-center gap-8 text-center">
-          <Clock />
-          <SearchBar />
-        </main>
-        
-        <footer className="w-full max-w-5xl">
-          <Shortcuts />
+          <main className="flex flex-col items-center gap-8 text-center mt-12 md:mt-20">
+            <Clock />
+            <SearchBar />
+            <div className="w-full max-w-5xl pt-8 md:pt-12">
+              <Shortcuts />
+            </div>
+          </main>
+        </div>
+
+        <footer className="w-full">
+          <Weather />
         </footer>
       </div>
     </div>
